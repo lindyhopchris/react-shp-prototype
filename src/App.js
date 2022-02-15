@@ -1,13 +1,21 @@
+import React, { Suspense } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from "react-router-dom";
-import Home from './pages/Home';
-import Step1 from './pages/Step1';
-import Step2 from './pages/Step2';
-import './App.css';
+import "./App.css";
+
+const Home = React.lazy(() => import('./pages/Home'));
+const Step1 = React.lazy(() => import('./pages/Step1'));
+const Step2 = React.lazy(() => import('./pages/Step2'));
+
+function Loading() {
+  return (
+    <div>Loading...</div>
+  );
+}
 
 function App() {
   return (
@@ -29,9 +37,21 @@ function App() {
 
         <section className="App-content">
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/step1" element={<Step1 />} />
-            <Route path="/step2" element={<Step2 />} />
+            <Route exact path="/" element={
+              <Suspense fallback={<Loading />}>
+                <Home />
+              </Suspense>
+            } />
+            <Route path="/step1" element={
+              <Suspense fallback={<Loading />}>
+                <Step1 />
+              </Suspense>
+            } />
+            <Route path="/step2" element={
+              <Suspense fallback={<Loading />}>
+                <Step2 />
+              </Suspense>
+            } />
           </Routes>
         </section>
       </Router>
