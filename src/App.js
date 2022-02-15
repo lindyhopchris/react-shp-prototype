@@ -20,7 +20,7 @@ function Loading() {
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename="/trade-in">
         <header>
           <ul>
             <li>
