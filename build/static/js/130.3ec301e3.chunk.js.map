@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/130.3ec301e3.chunk.js","mappings":"kJASA,UATA,WACE,OACE,iBAAKA,UAAU,QAAf,WACE,oCACA","sources":["pages/Step2.js"],"sourcesContent":["function Step2() {\n  return (\n    <div className=\"Step2\">\n      <h1>Step 2</h1>\n      <p>This is the second step.</p>\n    </div>\n  );\n}\n\nexport default Step2;\n"],"names":["className"],"sourceRoot":""}

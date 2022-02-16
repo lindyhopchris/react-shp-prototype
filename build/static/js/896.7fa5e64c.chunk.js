@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_shp_prototype=self.webpackChunkreact_shp_prototype||[]).push([[896],{896:function(e,s,t){t.r(s);var p=t(184);s.default=function(){return(0,p.jsxs)("div",{className:"Step1",children:[(0,p.jsx)("h1",{children:"Step 1"}),(0,p.jsx)("p",{children:"This is the first step."})]})}}}]);
+//# sourceMappingURL=896.7fa5e64c.chunk.js.map
