@@ -17,10 +17,10 @@ function Loading() {
   );
 }
 
-function App() {
+function App({ basename }) {
   return (
     <div className="App">
-      <Router basename="/trade-in">
+      <Router basename={basename}>
         <header>
           <ul>
             <li>

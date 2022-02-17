@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from './server';
+import preload from './helpers/preload';
 
 if (process.env.NODE_ENV === 'development') {
   makeServer({ environment: 'development' });
 }
 
+const data = preload();
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App basename={data?.basename} />
   </React.StrictMode>,
   document.getElementById('react-shp-app')
 );
