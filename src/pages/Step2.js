@@ -17,10 +17,6 @@ function Step2() {
     setName(value);
   }
 
-  const Message = (
-    <div class="alert alert-success">{message}</div>
-  );
-
   return (
     <div className="Step2">
       <h1>Step 2</h1>
@@ -29,15 +25,18 @@ function Step2() {
       {message && <div className="alert alert-success">{message}</div>}
 
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">What's your name?</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={name}
-          onChange={handleNameChange}
-        /><br />
-        <button type="submit">Say Hello</button>
+        <div className="form-group">
+          <label htmlFor="name">What's your name?</label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            value={name}
+            className="form-control"
+            onChange={handleNameChange}
+          />
+        </div>
+        <button type="submit" className="btn btn-success">Say Hello</button>
       </form>
     </div>
   );
