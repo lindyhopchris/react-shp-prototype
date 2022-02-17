@@ -1,5 +1,7 @@
+import { url } from './index';
+
 export default async function sayHello(name) {
-  const response = await fetch('/ajax-trade-in/say-hello', {
+  const response = await fetch(url('say-hello'), {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

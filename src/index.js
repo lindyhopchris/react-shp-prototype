@@ -5,16 +5,22 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { makeServer } from './server';
 import preload from './helpers/preload';
-
-if (process.env.NODE_ENV === 'development') {
-  makeServer({ environment: 'development' });
-}
+import bootstrap from './helpers/bootstrap';
 
 const data = preload();
 
+bootstrap(data);
+
+if (process.env.NODE_ENV === 'development') {
+  makeServer({
+    environment: 'development',
+    namespace: data.api_namespace
+  });
+}
+
 ReactDOM.render(
   <React.StrictMode>
-    <App basename={data?.basename} />
+    <App basename={data.basename} />
   </React.StrictMode>,
   document.getElementById('react-shp-app')
 );
